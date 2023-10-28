@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Gallery</title>
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+ background-color: #e4e4ec;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #131314; 
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+  background-color: #e4e4ec; 
+  padding: 10px 20px; 
+  border: 3px solid #171616;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(130, 13, 13, 0.1); 
+  transition: transform 0.2s; 
+}
+h1:hover {
+  transform: scale(1.05);
+}
+h5{
+    font-family: Harrington;
+    text-align: center;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 95%;
+    margin:20px auto;
+    padding: 20px;
+    background-color: rgb(217, 210, 210);
+    border: 1px solid #f4efef;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img {
+   /* max-width:100%;
+    height: auto;*/
+    border-radius: 20px;
+    width: 350px; 
+    height: 400px;
+
+}
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+
+.popup-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(197, 182, 182);
+}
+
+
+
+body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+       
+        ul.navbar {
+            background-color:  rgb(217, 210, 210);
+            list-style-type: none;
+            overflow: hidden;
+            display: flex; 
+            
+           
+        }
+ul.navbarr
+{
+  background-color:  rgb(20, 19, 19);
+  display: flex;
+}
+   ul.navbarr img{
+            padding: 10px; 
+            height: 30px;
+            width: 30px;
+        }
+   
+        ul.navbar img {
+            margin-right: 20px; 
+            padding: 10px; 
+            height: 60px;
+            width: 90px;
+        }
+
+        ul.navbar li {
+            float: left;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: rgb(33, 32, 32);
+            text-align: center;
+            padding: 28px 6px;
+            text-decoration: none;
+        }
+
+    
+      
+  
+
+   
+
+
+
+
+
+
+
+
+.navbar li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 0px;
+    color: #333; 
+    font-size: 17px; 
+}
+
+.navbar li  img {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 0px; 
+    float: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.logo{
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+.navbar {
+    list-style: none; 
+    margin: 30;
+    padding: 50;
+}
+
+
+.navbar li.social-media {
+    float: right; 
+    margin-left: 0px; 
+    padding: 0px;
+
+
+}
+
+
+.navbar li.social-media a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 24px; 
+ 
+}
+
+
+.navbar li.social-media a img {
+    width: 25px; 
+    height: 25px; 
+    margin-right: 0px; 
+    border-radius: 15px;
+    
+}
+.navbarr li.social-media a img {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 0px; 
+    border-radius: 15px;
+}
+
+.navbar img {
+    border-radius: 100%;
+    border-radius: 00px;
+}
+
+
+
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+main {
+    padding: 20px;
+}
+
+
+.footer {
+  background-color:  rgb(20, 19, 19);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    max-width: 300px; 
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+}
+
+.footer-section p {
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.footer-bottom {
+    background-color:  rgb(20, 19, 19);
+    padding: 10px 0;
+    text-align: left;
+  
+}
+.footer-bottom img {
+ 
+    border-radius: 100%;
+}
+.footer-bottom p {
+ 
+    margin: 0;
+}
+.footer-bottom  h1, .header h5 {
+  margin: 0;
+ 
+
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color:  rgb(217, 210, 210);
+    
+}
+.footer-buttons a {
+  display: inline-block; 
+  text-decoration: none; 
+  margin: 0 15px; 
+  padding: 10px 20px;
+  border: 1px solid #007bff; 
+  border-radius: 5px;
+  background-color: #007bff; 
+  color: #fff;
+  font-weight: bold; 
+  transition: background-color 0.3s, color 0.3s;
+}
+.footer-buttons a:hover {
+  background-color: #0056b3; 
+}
+
+
+.sign-in-button {
+  background-color: #4CAF50; 
+}
+
+.log-in-button {
+  background-color: #FF5722; 
+}
+@media (max-width: 540px) {
+    
+}  
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-contentss {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 550px; 
+}
+
+
+.language-dropdown {
+  display: flex;
+  align-items: center; 
+}
+
+.dropdown-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: auto; 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.language-option {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.language-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Additional styles for individual language options */
+#languageDropdownContent a {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Reset some default styling */
+body, ul, li {
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  rgb(217, 210, 210);
+    padding: 10px;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+   
+}
+
+.navbar li {
+    margin: 0 5px;
+}
+
+
+.search input[type="text"] {
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    width: 500px;
+   
+}
+
+.search button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 0px 60px; /* Increase the padding to make it larger */
+    cursor: pointer;
+    font-size: 36px; /* Increase the font size */
+}
+
+
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+    margin: 0 0;
+}
+
+
+.navbarrr li.social-media a img {
+    display: flex;
+    width: 20px; 
+    height: 20px; 
+    margin-right: 0px; 
+    border-radius: 65px;
+}
+
+ul.navbarrr
+{
+    background-color:  rgb(217, 210, 210);
+  display: flex;
+
+}
+   ul.navbarrr img{
+            padding: 10px; 
+            height: 20px;
+            width: 20px;
+         
+        }
+
+
+
+
+
+
+
+
+
+/* Reset some default styling */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Basic styling for the navbar */
+.navb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  rgb(217, 210, 210);
+    
+    color: #fff;
+}
+.logo{ 
+    background-color: rgb(217, 210, 210);
+  border-radius: 0%;
+}
+
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.num-mail {
+    display: flex;
+}
+
+.num-mail li {
+    margin-right: 10px; /* Adjust the margin between items */
+    font-size: 12px; /* Reduce the font size */
+}
+
+.num-mail img {
+    width: 16px; /* Reduce the width of the icons */
+    height: 16px; /* Reduce the height of the icons */
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 10px; /* Adjust the margin between items */
+}
+
+.nav-links a {
+    font-size: 15px; /* Reduce the font size */
+}
+
+.footer-buttonss {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust the margin to make the buttons more spaced out */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    font-size: medium;
+}
+
+.menu-toggle a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navb {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle a {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.num-mail {
+    display: flex;
+}
+
+.num-mail li {
+    margin: 0 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.num-mail img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    align-items:center;
+    
+}
+
+.nav-links li {
+    margin: 0 10px;
+
+    
+}
+
+.menu-toggle a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    display: none;
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+    }
+
+    .num-mail {
+        margin-top: 10px;
+    }
+
+    .num-mail li {
+        margin: 10px 0;
+    }
+
+    .num-mail img {
+        width: 30px;
+        height: 10px;
+        margin-right: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle a {
+        display: block;
+    }
+}
+
+
+
+
+.navbar-buttonss {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; 
+}
+
+.sign-in-button {
+    padding: 8px 18px;
+    font-size: 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 65px;
+    margin-right: 10px; 
+}
+
+.log-in-button {
+    padding: 8px 18px;
+    font-size: 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 65px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    /* ... */
+    
+    .navbar-buttons {
+        margin: 10px 0; 
+        justify-content: space-between;
+    }
+}
+
+
+
+a {
+    color: #181717; 
+    text-decoration: none; 
+}
+
+.navb {
+        padding: 0% 10px; 
+    }
+
+
+    li {
+    margin: px 0;
+    padding: 0px;
+    background-color: rgb(217, 210, 210);
+    border: 1px solid rgb(194, 186, 186);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(136, 134, 134, 0.2);
+    text-align: center;
+    font-size: 6px;
+    color: #333;
+    list-style: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+li:hover {
+    background-color: rgb(217, 210, 210);
+    color: #131313;
+    transform: scale(1.05);
+}
+
+.navbarr li.social-media {
+    margin-right: 10px; 
+}
+.navbarr li {
+    background-color: #000; 
+}
+.separator {
+    border: none;
+    height: 1px; 
+    background-color: rgb(195, 179, 161);
+    margin: 10px 0; 
+}
+
+    </style>
+
+
+
+
+
+
+
+
+   <body >
+    <nav class="navb">
+        <div class="logo">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/fas-1-logo-png-transparent.png" alt="Image" style="width: 60px; height: 40px;">
+        </div>
+        <div class="contact-info">
+            <ul class="num-mail">
+                <li class="ss"><img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/brown_webpict08_1484337068-1.png" alt="Phone icon">+92 336 9264264</li>
+                <li><img src="https://icons-for-free.com/iconfiles/png/512/email+gmail+mail+service+mailing+online+service+icon-1320194987766966945.png" alt="Email icon">fahadalamsaqibi@gmail.com</li>
+            </ul>
+        </div>
+
+
+
+
+
+
+        <ul class="nav-links">
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Icons</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Font</a></li>
+            <li><a href="#">Vector</a></li>
+            <li><a href="#">More</a></li>
+            <li><a href="#">Categories</a></li>
+        </ul>
+        <div class="footer-buttonss">
+            <a class="sign-in-button" href="#">Sign In</a>
+            <a class="log-in-button" href="#">Log In</a>
+          
+          </div>
+    </nav>
+
+
+
+
+    <hr class="separator">
+
+
+
+
+   
+<div class="container">
+
+
+         <ul class="navbar">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/fas-1-logo-png-transparent.png" alt="Image" style="width: 90px; height: 80px;">
+
+     
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="search">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            
+        </li>
+</ul>
+    
+
+<ul class="navbarrr">
+    <li class="social-media"><a href="https://www.facebook.com/fahad.saqibi.3/"><img src="https://w7.pngwing.com/pngs/561/460/png-transparent-fb-facebook-facebook-logo-social-media-icon.png" alt="Facebook"></a></li>
+            <li class="social-media"><a href="https://www.instagram.com/fahadalamsaqibi/"><img src="https://img.freepik.com/premium-vector/purple-gradiend-social-media-logo_197792-1883.jpg" alt="Instagram"></a></li>
+            <li class="social-media"><a href="https://github.com/Fahad12405/Html-coding-classes.git"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"></a></li>
+            <li class="social-media"><a href="https://twitter.com/fahadalamsaqibi"><img src="https://feeds.abplive.com/onecms/images/uploaded-images/2023/07/24/d1c5b0bb6d3d68974aa535c859e8bb711690190849793402_original.jpg?impolicy=abp_cdn&imwidth=650" alt="Twitter"></a></li>
+      
+        </div>
+  
+ 
+           
+    </ul>
+ 
+   
+
+
+
+
+    <div class="gallery">
+
+    </div>
+    <div class="popup-container">
+        <span class="close-popup">&times;</span>
+        <img class="popup-image" src="" alt="Popup Image">
+    </div>
+    
+    <script >
+
+const imageArray = [
+
+
+
+
+ "https://cf.ijersey.ru/upload/ttmall/img/20220705/1244cfe43961c0920c8e04c6963dafed.png=z-0,0_f-webp",
+ "https://theshoppies.pk/wp-content/uploads/2023/06/Real-Madrid-2023-24-Home-jERSEY.jpg",
+ "https://images.footballfanatics.com/bayern-munich/fc-bayern-adidas-home-shirt-2023-24-kids-harry-kane-9_ss5_p-200502297+pv-2+u-ppjakvowl3snxkizlnig+v-xvxu6j7nxpyszbzwborf.jpg?_hv=2&w=600",
+ "https://theshoppies.pk/wp-content/uploads/2023/06/MAN-CITY.jpeg",
+ "https://diamu.com.bd/wp-content/uploads/2022/07/Manchester-United-Home-Authentic-Jersey-2022-23.jpg",
+ "https://images-eu.ssl-images-amazon.com/images/I/61hO3UgvFcL._AC_UL600_SR600,600_.jpg",
+ "https://www.tfcfootball.com.my/wp-content/uploads/2022/05/765883_01.png",
+ "https://cdn.footballkitarchive.com/2023/07/13/8nHqd8i7HogwtFH.jpg",
+ "https://theshoppies.pk/wp-content/uploads/2023/01/Paris-Saint-Germain-PSG-Jersey-2023-24.jpg",
+  "https://theshoppies.pk/wp-content/uploads/2020/07/Liverpool-LFC-Home-Jersey-2023-24.jpg",
+  "https://images.footballfanatics.com/chelsea/chelsea-nike-home-vapor-match-shirt-2023-24_ss5_p-13387597+pv-2+u-yk6besygd7gfjsls16pz+v-0rp4jd60752nyv57iqoz.jpg?_hv=2&w=900",
+"https://www.sportsdirect.com/images/imgzoom/37/37745201_xxl.jpg",
+"https://www.soccerpro.com/wp-content/uploads/ik7166_adidas_as_roma_home_stadium_jsy_2023_24_01.jpg",
+"https://down-th.img.susercontent.com/file/bfaf0beee10c6dc48b9e56e6bb0bf01b",
+"https://theshoppies.pk/wp-content/uploads/2023/06/Inter-Miami-Jersey.jpeg",
+"https://theshoppies.pk/wp-content/uploads/2023/01/Al-Nassar-Ronaldo-Shirt-2023.jpg",
+"https://theshoppies.pk/wp-content/uploads/2023/06/Juventus-Home-Jersey-2023-24-Shirt.jpg",
+"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_706,h_706/global/776967/01/fnd/ARE/fmt/png/",
+
+
+
+
+
+
+
+
+
+
+
+
+
+];
+
+
+const imageSize = "200px" ; // You can adjust the size as needed
+
+
+
+const gallery = document.querySelector('.gallery');
+
+for (let i = 0; i < imageArray.length; i++) {
+    const img = document.createElement('img');
+    img.src = imageArray[i];
+    img.alt = 'Image ' + (i + 1);
+    gallery.appendChild(img);
+}
+
+
+
+
+const popupContainer = document.querySelector('.popup-container');
+const popupImage = document.querySelector('.popup-image');
+const closePopup = document.querySelector('.close-popup');
+
+
+function openPopup(imageUrl) {
+    popupImage.src = imageUrl;
+    popupContainer.style.display = 'block';
+}
+
+
+function closePopupWindow() {
+    popupContainer.style.display = 'none';
+}
+
+
+gallery.addEventListener('click', function (event) {
+    if (event.target.tagName === 'IMG') {
+        openPopup(event.target.src);
+    }
+});
+
+closePopup.addEventListener('click', closePopupWindow);
+
+
+popupContainer.addEventListener('click', function (event) {
+    if (event.target === popupContainer) {
+        closePopupWindow();
+    }
+});
+
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closePopupWindow();
+    }
+});
+
+
+
+
+
+    </script>
+     <footer class="footer">
+        <div class="footer-content">
+            <section class="footer-section">
+                <h1>About Us</h1>
+                <h5>Welcome to Our Company, where innovation meets excellence. Founded in 2005, we have been at the forefront of technology and creativity, consistently pushing boundaries to deliver cutting-edge solutions to our clients worldwide.</h5>
+                <h5>Our passionate team of experts is dedicated to crafting unique and tailored experiences for our customers. We believe that every project is an opportunity to make a difference and leave a lasting impact. Our commitment to quality,
+                     transparency, and customer satisfaction drives us forward.</h5>
+              
+            </section>
+            <section class="footer-section">
+               <h1>Contact Us</h1>
+                <h5>Email: fahadalamsaqibi@example.com</h5>
+                <h5>Phone: +92 3272748498</h5>
+                <h5>Tel: 01647 632006</h5>
+            </section>
+            <section class="footer-section">
+                <h1> INFORMATION</h1>
+                 <h5>FAQs</h5>
+ <h5>Privacy Policy </h5>
+                 <h5> Costumer Service</h5> 
+                <h5>  Shipping</h5>
+                 <h5>Size Information </h5>
+                <h5> Returns </h5> 
+                <h5> Printing </h5>               
+                 <h5> Ordering</h5>
+                <h5>Marketing & Promotion </h5>
+               <h5>Terms & Conditions</h5>
+                 
+               
+             </section>
+            <section class="footer-section">
+                <h1>Links</h1>
+                <ul class="navbarr">
+                    <li class="social-media"><a href="https://www.facebook.com/fahad.saqibi.3/"><img src="https://w7.pngwing.com/pngs/561/460/png-transparent-fb-facebook-facebook-logo-social-media-icon.png" alt="Facebook"></a></li><br>
+            <li class="social-media"><a href="https://www.instagram.com/fahadalamsaqibi/"><img src="https://img.freepik.com/premium-vector/purple-gradiend-social-media-logo_197792-1883.jpg" alt="Instagram"></a></li><br>
+            <li class="social-media"><a href="https://github.com/Fahad12405/Html-coding-classes.git"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"></a></li><br>
+            <li class="social-media"><a href="https://twitter.com/fahadalamsaqibi"><img src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10809.jpg" alt="Twitter"></a></li>
+              <li class="social-media"><a href="https://www.youtube.com/channel/UCUQOWFcG_7SnDdxbPSU1Zvg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/YouTube_play_button_square_%282013-2017%29.svg/640px-YouTube_play_button_square_%282013-2017%29.svg.png" alt="Youtube"></a></li>        
+        </ul>
+        <h5>Contact us with our social-Links..</h5>
+<br><br><br>
+               <div class="footer-buttons">
+      <a class="sign-in-button" href="#">Sign In</a>
+      <a class="log-in-button" href="#">Log In</a>
+      <h5>Get exclusive assets sent straight to your inbox.</h5>
+    </div>
+
+            </section>
+         
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            
+            <blockquote><h1>F@$</h1>
+                <h5>&copy; Copyright  2010-2023 F@$ Company Sports T-Shirts All rights reserved.</h5>
+            </blockquote> </div>
+
+           
+
+            <div class="footer-contentss">
+                <div class="language-dropdown">
+                  <button class="dropdown-button" id="languageDropdown">Select Language</button>
+                  <div class="dropdown-content" id="languageDropdownContent">
+                    <a href="#" class="language-option" data-lang="en">English</a>
+                    <a href="#" class="language-option" data-lang="es">Spanish</a>
+                    <a href="#" class="language-option" data-lang="fr">French</a>
+                    <a href="#" class="language-option" data-lang="de">German</a>
+                    <a href="#" class="language-option" data-lang="zh">Chinese</a>
+                 
+                  </div>
+                </div>
+              </div>
+             </footer>
+</body>
+</html>
+
+
+
+
